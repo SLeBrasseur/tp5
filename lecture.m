@@ -1,4 +1,8 @@
-************************************************
+
+
+
+% 
+%*************************************************
 % Nom du fichier: lecture.m
 % Description: exercice TP5 
 % Auteur: Samuel Le Brasseur
@@ -44,11 +48,3 @@ else
     
     end
 end
-
-
-
-
-
-
-
-
