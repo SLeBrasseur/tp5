@@ -1,6 +1,7 @@
 
 
 
+
 % 
 %*************************************************
 % Nom du fichier: lecture.m
@@ -12,39 +13,41 @@
 % Date: 17 novembre 2015
 %***************************************
 
+
+
 lec=fopen('passe.txt','rt');
 
 if lec== -1
-    disp('erreur');
-else
-    disp('fichier ouvert');
-    val=fgetl(lec)
-    while val~= -1
-    val=fgetl(lec)
-    %cryptage
-    x=randi(50)
-    
-    passe_cryp= x+ val
-    end
-    
-    
-    
-    
-   %__----------- 
-    lecs=fopen('passe_c.txt','at');
-    
-    if lec== -1
     disp('erreur')
-    else
+else
     disp('fichier ouvert')
     
-    %x=randi(50);
+    x=randi(50)
+    affiche=fgetl(lec)
     
-    fprintf(lecs,'%9.0f', x);
-    fclose(lecs)
-    %------------------
+    ligne=strfind(affiche,' ');
+    dernier=length(ligne);
+    dernier_espace=ligne(dernier);
+    mot_pass=affiche(dernier_espace+1:end)
+    mot_cryp=(mot_pass)+x
     
- fclose(lec);   
-    
+    while affiche~=-1
+    affiche=fgetl(lec)
+     
     end
+    lec2=fopen('passe_c.txt', 'at')
+    
+    
+    fclose(lec2);
+ fclose(lec);   
+ 
+ 
+    
 end
+
+
+
+
+
+
+
